@@ -63,10 +63,15 @@ public class Target : MonoBehaviour
     {
         if (gameManager.isGameActive)
         {
-            Destroy(gameObject);
-            gameManager.UpdateScore(pointValue);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-            if (gameObject.CompareTag("Bad"))
+            PlayDestroySound();
+            Destroy(gameObject);
+           
+            if (!gameObject.CompareTag("Bad"))
+            {
+                gameManager.UpdateScore(pointValue);
+            }
+            else 
             {
                 gameManager.GameOver();
             }
@@ -76,7 +81,6 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        Debug.Log("destroyed");
         if (!gameObject.CompareTag("Bad"))
         {
             gameManager.GameOver();
@@ -86,6 +90,12 @@ public class Target : MonoBehaviour
     void DestroyOnTime()
     {
         Destroy(gameObject);
+    }
+
+    void PlayDestroySound()
+    {
+        GetComponent<AudioSource>().Play();
+        Debug.Log("bruit");
     }
     
 }
