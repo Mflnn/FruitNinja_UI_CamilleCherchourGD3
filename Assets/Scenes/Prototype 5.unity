@@ -1588,6 +1588,10 @@ MonoBehaviour:
   GameOverPanel: {fileID: 1969945122}
   ScoreUI: {fileID: 536656288}
   Trail: {fileID: 272930093}
+  audioClips:
+  - {fileID: 8300000, guid: b12ce0fccd0c96648a790e9b62fc9d2d, type: 3}
+  - {fileID: 8300000, guid: 49568d68c90f5874ab669a42d35c8ac4, type: 3}
+  audioSource: {fileID: 0}
 --- !u!4 &976516247
 Transform:
   m_ObjectHideFlags: 0
@@ -1613,11 +1617,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b12ce0fccd0c96648a790e9b62fc9d2d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

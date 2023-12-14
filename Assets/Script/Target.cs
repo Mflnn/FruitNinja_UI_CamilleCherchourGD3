@@ -59,6 +59,7 @@ public class Target : MonoBehaviour
         return new Vector3(Random.Range(-maxSpawnX, maxSpawnX), PointSpawnY);
     }
 
+    //quand la souris entre en contact avec un objet, il est détruit et joue un son. Si son tag est "Bad", on lance la fonction gameover, si son tag n'est pas "Bad", on ajoute des points au score.
     private void OnMouseEnter()
     {
         if (gameManager.isGameActive)
@@ -78,6 +79,7 @@ public class Target : MonoBehaviour
         }
     }
 
+    //détruit les objets non touchés qui tombent hors de l'écran.
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
