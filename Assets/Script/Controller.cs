@@ -20,6 +20,11 @@ public class Controller : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject ScoreUI;
     public GameObject Trail;
+
+    public void Start()
+    {
+        PlayMusic();
+    }
     public void StartGame (int difficulty)
     {
         isGameActive = true;
@@ -59,5 +64,11 @@ public class Controller : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PlayMusic()
+    {
+        GetComponent<AudioSource>().Play();
+        Debug.Log ("music is playing");
     }
 }

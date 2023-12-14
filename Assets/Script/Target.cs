@@ -23,6 +23,8 @@ public class Target : MonoBehaviour
 
     public ParticleSystem explosionParticle;
 
+
+
  
 
     // Start is called before the first frame update
@@ -38,6 +40,7 @@ public class Target : MonoBehaviour
         //pour éviter de spawn toujours au même endroit, on va random la position du gameobject au start
         transform.position = new Vector3(Random.Range(-4, 4), -1);
         gameManager = GameObject.Find("GameController").GetComponent<Controller>();
+        
         
     }
 
